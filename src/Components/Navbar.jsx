@@ -1,10 +1,36 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { IoMenuOutline, IoCloseSharp } from "react-icons/io5";
 import AnimatedWords from "./AnimatedWords";
 import BorderAnimation from "./BorderAnimation";
 import gsap from "gsap";
+import { useWindowScroll } from "react-use";
+import { useGSAP } from "@gsap/react";
 
 function Navbar() {
+  const navRef = useRef();
+  const { y: currentScroll } = useWindowScroll();
+  const [isVisible, setVisible] = useState(true);
+  const [lastScroll, setLastScroll] = useState();
+
+  useEffect(() => {
+    if (currentScroll === 0) {
+      setVisible(true);
+    } else if (currentScroll < lastScroll) {
+      setVisible(true);
+    } else if (currentScroll > lastScroll) {
+      setVisible(false);
+    }
+    setLastScroll(currentScroll);
+  }, [currentScroll, lastScroll]);
+
+  useGSAP(() => {
+    gsap.to(navRef.current, {
+      y: isVisible ? 0 : -100,
+      opacity: isVisible ? 1 : 0,
+      duration: 0.4,
+      ease: "power1.inOut",
+    });
+  }, [isVisible]);
   const navItem = [
     "Services",
     "Our work",
@@ -26,7 +52,10 @@ function Navbar() {
   };
   return (
     <>
-      <div className="fixed z-50 w-full flex h-24 px-4 md:px-10 py-6 backdrop-blur-sm text-PrimaryGray items-center justify-between">
+      <div
+        ref={navRef}
+        className="fixed z-50 w-full flex h-24 px-4 md:px-10 py-6 backdrop-blur-sm text-PrimaryGray items-center justify-between"
+      >
         <div className="text-4xl md:text-5xl font-founders font-semibold cursor-pointer">
           Ochi
         </div>
