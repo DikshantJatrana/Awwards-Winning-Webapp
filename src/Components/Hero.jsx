@@ -53,7 +53,10 @@ function Hero() {
             {textItem}
           </h1>
         ))}
-        <Button title={"Start The Project"} />
+        <Button
+          title={"Start The Project"}
+          containerClass={"text-sm md:text-base mt-5"}
+        />
       </div>
       <div className="text-center relative overflow-hidden text-PrimaryGray mt-8 md:mt-12">
         <div className="text-SecondGray">Scroll</div>

@@ -22,19 +22,19 @@ function Button({ title, containerClass }) {
     });
   };
   return (
-    <div className="inline-block mt-5">
+    <div className="inline-block">
       <div
         ref={ButtonRef}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         className={`border cursor-pointer uppercase border-PrimaryGray text-PrimaryGray transition-all delay-200 ease-in-out duration-75 hover:text-white overflow-hidden relative rounded-full ${containerClass}`}
       >
-        <div className="px-2 py-1 text-base lg:text-lg">
+        <div className="px-2 py-1">
           <h1 className="z-20">{title}</h1>
         </div>
         <div
           id="bg"
-          className="bg-PrimaryGray w-full rounded-full text-base lg:text-lg absolute left-0 top-[100%] py-1 px-2"
+          className="bg-PrimaryGray w-full rounded-full  absolute left-0 top-[100%] py-1 px-2"
         >
           {title}
         </div>

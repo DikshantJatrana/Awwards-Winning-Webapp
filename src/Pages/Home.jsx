@@ -4,6 +4,9 @@ import Hero from "../Components/Hero";
 import Marquee from "../Components/Marquee";
 import About from "../Components/About";
 import Eyes from "../Components/Eyes";
+import Featured from "../Components/Featured";
+import Ready from "../Components/Ready";
+import Footer from "../Components/Footer";
 
 function Home() {
   return (
@@ -13,6 +16,8 @@ function Home() {
       <Marquee />
       <About />
       <Eyes />
+      <Ready />
+      <Footer />
     </div>
   );
 }

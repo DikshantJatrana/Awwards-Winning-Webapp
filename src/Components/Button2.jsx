@@ -41,7 +41,7 @@ function Button2({ title, containerClass }) {
       onMouseLeave={handleMouseLeave}
       className={`border border-PrimaryGray uppercase cursor-pointer overflow-hidden rounded-full inline-block relative text-sm md:text-base lg:text-lg ${containerClass}`}
     >
-      <div className="z-10 relative flex items-center gap-2 md:gap-3 lg:gap-4 pl-4 px-2 py-2 rounded-full">
+      <div className="z-10 relative duration-200 transition-all ease-in-out hover:text-white flex items-center gap-2 md:gap-3 lg:gap-4 pl-4 px-2 py-2 rounded-full">
         {title}
         <span className="rotate-45 text-lg md:text-2xl lg:text-3xl">
           <FaCircleArrowUp id="arrow" className="scale-[0.15]" />
