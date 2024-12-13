@@ -18,7 +18,12 @@ function Ready() {
     });
   });
   return (
-    <div className="relative w-full h-[80vh] bg-primaryGreen rounded-t-2xl md:min-h-screen">
+    <div
+      data-scroll-section
+      data-scroll
+      data-scroll-speed="0.6"
+      className="relative w-full h-[80vh] bg-primaryGreen rounded-t-2xl md:min-h-screen"
+    >
       <div className="text-[10vh] pt-[13%] md:pt-[0%] leading-[8vh] md:text-[22vh] text-PrimaryGray text-center font-founders font-semibold md:leading-[17vh] uppercase">
         <h1>Ready</h1>
         <h1>to start</h1>

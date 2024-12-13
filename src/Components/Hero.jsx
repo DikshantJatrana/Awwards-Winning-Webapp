@@ -3,8 +3,13 @@ import Button from "./Button";
 import AnimatedWords from "./AnimatedWords";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import LocomotiveScroll from "locomotive-scroll";
 
 function Hero() {
+  const scroll = new LocomotiveScroll({
+    el: document.querySelector("[data-scroll-container]"),
+    smooth: true,
+  });
   const Wrods = ["We create", "eye-opening", "presentations"];
   const Text = [
     "For public and private companies",
@@ -33,7 +38,12 @@ function Hero() {
     });
   });
   return (
-    <div className="relative w-full h-screen overflow-x-hidden">
+    <div
+      data-scroll-section
+      data-scroll
+      data-scroll-speed="-0.85"
+      className="relative w-full h-screen overflow-x-hidden"
+    >
       <div className="text-[8.75vh] md:text-[13.5vh] uppercase px-4 md:px-10 py-28 md:py-36 pb-44 md:pb-40 font-founders font-bold leading-[6.8vh] md:leading-[9.4vh] text-PrimaryGray border-b border-zinc-600">
         {Wrods.map((item, index) => (
           <h1 id={index === 1 ? "wordMove" : ""} key={index}>

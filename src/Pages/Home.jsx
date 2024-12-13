@@ -7,8 +7,10 @@ import Eyes from "../Components/Eyes";
 import Featured from "../Components/Featured";
 import Ready from "../Components/Ready";
 import Footer from "../Components/Footer";
+import LocomotiveScroll from "locomotive-scroll";
 
 function Home() {
+  const locomotiveScroll = new LocomotiveScroll();
   return (
     <div className="relative w-full min-h-screen font-montreal bg-SecondGray">
       <Navbar />
@@ -16,6 +18,7 @@ function Home() {
       <Marquee />
       <About />
       <Eyes />
+      <Featured />
       <Ready />
       <Footer />
     </div>

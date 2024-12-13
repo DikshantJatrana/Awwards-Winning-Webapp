@@ -18,7 +18,11 @@ function Eyes() {
 
   return (
     <div className="relative w-full h-[42vh] md:h-screen overflow-hidden">
-      <div className="relative w-full h-[100%] bg-center bg-cover bg-[url('/img/eyes.jpg')]">
+      <div
+        data-scroll
+        data-scroll-speed="-0.7"
+        className="relative w-full h-[100%] bg-center bg-cover bg-[url('/img/eyes.jpg')]"
+      >
         <div className="absolute flex top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] gap-4">
           <div className="h-[12vh] md:h-[28vh] flex items-center justify-center aspect-square bg-white rounded-full">
             <div className="relative h-2/3 w-2/3 bg-PrimaryGray rounded-full">
